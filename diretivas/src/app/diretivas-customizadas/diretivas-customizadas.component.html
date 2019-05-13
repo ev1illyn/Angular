@@ -1,0 +1,27 @@
+<!-- diretivas com renderer
+<p appFundoAmarelo>
+  Texto com fundo amarelo
+</p>
+<button appFundoAmarelo>
+  botão
+</button> -->
+
+<!-- diretivas com HostListener e HostBinding
+<p appHighlightMouse>
+  Texto com highlight quando passo o mouse
+</p> -->
+
+<!-- diretivas com
+<p appHighlight [defaultColor]="'blue'" [hightLightColor]="'red'">
+  Texto com highlight com cores customizadas
+</p> -->
+
+<div *ngIf="mostrarCursos">
+  Lista de Cursos
+</div>
+<div *ngElse="mostrarCursos">
+Não existem cursos para serem listados
+</div><br>
+<button (click)="onMostrarCursos()">
+Clique para ver cursos
+</button>

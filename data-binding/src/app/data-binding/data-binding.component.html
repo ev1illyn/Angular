@@ -1,0 +1,138 @@
+  
+  <!--<section>
+    <article>
+
+      <h3>Interpolação</h3>
+      <p>String renderizada com interpolação: {{ url }}</p>
+      <p>Resultado de 10 + 10: {{ 10 + 10 }}</p>
+      <p>Resultado de 10 + 10 não é: {{ 10 + 10 + getValor() }}</p>
+      <p>{{cursoAngular && getCurtirCurso()}}</p>
+    </article>
+
+    <article>
+      <h3>Propety Biding</h3>
+      <img src="{{ urlImagem }}">
+      <img [src]="urlImagem">
+      <img bind-src="urlImagem">
+    </article>
+  </section>-->
+  
+  <!--<section style="width:30%">
+    <article>
+      <h4>Class & Style Biding</h4>
+
+      <div>Selecione uma classe:
+        variavel local de template
+        <select #classe (change)="0">
+          <option value="alert-success">Success</option>
+          <option value="alert-danger">Danger</option>
+          <option value="alert-warning">Warning</option>
+          <option value="alert-info">Info</option>
+        </select>
+      </div> <br>
+      
+      class binding com interpolação
+      <div class="alert {{classe.value}}" role="alert">
+        Texto colorido conforme o valor do combobox
+      </div> <br>
+    
+      utilizando property binding com estilo de classe
+      <div class="alert alert-danger" role="alert" 
+      [style.display]="classe.value == 'alert-danger' ? 'block' : 'none'">
+          Texto aparece em caso de erro
+      </div> <br>
+
+      adicionando o class binding
+      <div>
+        <div class="alert" role="alert" 
+       [class.alert-success]="classe.value == 'alert-success'"> success!
+        </div>
+        <div class="alert" role="alert"
+        [class.alert-danger]="classe.value == 'alert-danger'">
+          danger!
+        </div>
+        <div class="alert" role="alert"
+        [class.alert-warning]="classe.value == 'alert-warning'">
+          warning!
+        </div>
+        <div class="alert" role="alert"
+        [class.alert-info]="classe.value == 'alert-info'">
+          info!
+        </div>
+      </div>
+
+    </article>
+  </section>-->
+
+  <!--<section>
+
+    <h4>Event Binding - Escutando eventos no angular
+    </h4>
+
+    <div>
+      <button (click)="botaoClicado()"
+       class="bt btn-primary">Me clique!!!</button>
+    </div> <br>
+
+    <label>Insira algo novo:</label> <br>
+
+    <input type="text"
+    (keyup)="onKeyUp($event)"
+    (keyup.enter)="salvarValor($event.target.value)" 
+    (blur)="salvarValor(campoInput.value)"
+    #campoInput/> <br><br>
+
+    <p>Saída: {{valorAtual}}</p> <br><br>
+    <p>Saída: {{valorSalvo}}</p> <br><br>
+
+    <h2>
+    <span
+    (mouseover)="onMouseOverOut()"
+    (mouseout)="onMouseOverOut()"
+    [class.highlight]="isMouseOver">passe o mouse</span>
+    </h2>
+
+  </section>-->
+
+  <!--<section class="two-way-binding">
+    <article>
+      <div>
+
+        <input type="text"
+        [value]="nome"
+        (input)="nome=$event.target.value"/> <br><br>
+
+        <input type="text"
+        [(ngModel)]="nome"
+        (ngModelChange)="nome=$event"/> <br><br>
+
+        TWO-WAY DATA BINDING
+        <input type="text" [(ngModel)]="nome"> <br><br>
+
+        TWO-WAY DATA BINDING CANONICA
+        <input type="text" bindon-ngModel="nome"> <br><br>
+
+        <p>Você digitou: {{ nome }}</p>
+      </div> <br><br>
+      
+      <div>
+        <input type="text" [(ngModel)]="pessoa.nome">
+        <input type="text" [(ngModel)]="pessoa.idade">
+        <p>Meu nome é {{pessoa.nome}} e tenho {{pessoa.idade}} anos.</p>
+      </div>
+
+    </article>
+  </section>-->
+
+  <section>
+    <article>
+      <h3>Input/Output Properties - Reuso de Componente Input/Output Property</h3>
+      
+      <app-curso [nome]="nomeDoCurso"></app-curso>
+
+      <contador [valor]="valorInicial"
+       (mudouValor)="onMudouValor($event)">
+      </contador>
+
+    </article>
+  </section>

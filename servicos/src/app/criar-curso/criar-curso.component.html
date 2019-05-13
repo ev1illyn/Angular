@@ -1,0 +1,15 @@
+<h5>Compartilhando um serviço entre componentes</h5>
+
+<label for="novoCurso">Adicione um novo curso</label>
+<input type="text" name="novoCurso" #cursoInput>
+<button
+ (click)="onAddCurso(cursoInput.value)">
+ adicionar</button>
+
+<ul>
+  <li *ngFor="let cursos of cursos">
+    {{ cursos }}
+  </li>
+</ul>
+
+<app-receber-curso-criado></app-receber-curso-criado>

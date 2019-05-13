@@ -1,0 +1,18 @@
+<h2>property binding</h2>
+<span>
+    <i class="fa-star" 
+    [class.far]="!meuFavorito" 
+    [class.fas]="meuFavorito"
+    (click)="onClick()"
+    ></i>
+</span>
+<br>
+<h2>ngClass</h2>
+<span>
+    <i class="fa-star" 
+    [ngClass]="{
+      'far': !meuFavorito,
+      'fas': meuFavorito
+    }" (click)="onClick()"
+    ></i>
+</span>
