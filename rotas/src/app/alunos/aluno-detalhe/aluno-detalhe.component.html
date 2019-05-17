@@ -1,0 +1,24 @@
+<h5>
+  Detalhes do Aluno
+</h5>
+<table class="striped highlight responsive-table">
+    <thead>
+      <tr>
+          <th>Id</th>
+          <th>Nome</th>
+          <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ aluno?.id }}</td>
+        <td>{{ aluno?.nome }}</td>
+        <td>{{ aluno?.email }}</td>
+      </tr>
+    </tbody>
+</table><br>
+
+<button class="btn waves-effect waves-light" type="submit" name="action"
+  (click)="editarContato()">
+  <i class="material-icons right">editar</i>Editar
+</button>

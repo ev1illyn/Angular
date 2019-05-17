@@ -1,4 +1,3 @@
-<!--The content below is only a placeholder and can be replaced.-->
 <nav class="nav-extended">
     <div class="nav-wrapper">
       <!-- redireciona para o HomeComponent -->
@@ -12,24 +11,29 @@
              routerLink="login">
              Login</a></li>
 
+        <li class="tab"><a 
+             routerLinkActive="active"
+             routerLink="alunos">
+             Alunos</a></li>
+
         <li class="tab"><a
              routerLinkActive="active"
              routerLink="cursos" 
              [queryParams]="{pagina:1}">
              Cursos</a></li>
 
-        <li class="tab"><a
+        <!-- <li class="tab"><a
              routerLinkActive="active"
              [routerLink]="['curso', idCurso.value]">
-             Curso com Id</a>Curso com id</li>
+             Curso com Id</a>Curso com id</li> -->
 
       </ul>
     </div>
   </nav>
 
   <div class="container">
-      <p>entre com o id do curso</p>
-      <input #idCurso>
+      <!-- <p>entre com o id do curso</p>
+      <input #idCurso> -->
     <!-- suporte a rotas -->
     <router-outlet></router-outlet>
   </div>
