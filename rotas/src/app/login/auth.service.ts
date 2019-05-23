@@ -7,15 +7,14 @@ import { Injectable, EventEmitter } from '@angular/core';
 })
 export class AuthService {
 
-  mostrarMenuEmitter = new EventEmitter<Boolean>();
-
   private usuarioAutenticado: boolean = false;
+
+  mostrarMenuEmitter = new EventEmitter<Boolean>();
 
   constructor(private router: Router) { }
 
   fazerLogin(usuario: Usuario) {
 
-    console.log('service');
     if (usuario.nome === 'usuario@gmail.com' &&
       usuario.senha === '123') {
 
@@ -24,7 +23,7 @@ export class AuthService {
       this.mostrarMenuEmitter.emit(true);
 
       this.router.navigate(['/']);
-      
+
     } else {
 
       this.usuarioAutenticado = false;
