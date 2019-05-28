@@ -1,0 +1,24 @@
+<div class="container">
+
+    <h3>Template Driven Form</h3>
+
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+  
+      <div class="form-group">
+        <label for="nome">Nome:</label>
+        <input placeholder="Evillyn Oliveira"
+         type="text" class="form-control" name="nome" [(ngModel)]="usuario.nome">
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input placeholder="evillyndsoliveiras@gmail.com"
+         type="email" class="form-control" name="email" [(ngModel)]="usuario.email">
+      </div>
+  
+      <button type="submit" class="btn btn-success">Submit</button>
+    
+    </form>
+  
+  </div>
+  
