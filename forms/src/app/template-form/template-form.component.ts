@@ -8,15 +8,33 @@ import { Component, OnInit } from '@angular/core';
 export class TemplateFormComponent implements OnInit {
 
   usuario: any = {
-    nome: 'evillyn',
-    email: 'evillyndsoliveiras@gmail.com'
-    }
+    nome: null,
+    email: null,
+    // cep: null,
+    // numero: null,
+    // rua: null,
+    // bairro: null,
+    // cidade: null,
+    // estado: null
+    };
 
   constructor() { }
 
   onSubmit(form) {
-    console.log(form);
-    console.log(this.usuario);
+    // this.usuario = form.value;
+    console.log(form.value);
+    // console.log(this.usuario);
+  }
+
+  verificaCampos(campo) {
+    return !campo.valid && campo.touched;
+  }
+
+  aplicaCssErro(campo) {
+    return {
+      'has-error': this.verificaCampos(campo),
+      'has-feedback': this.verificaCampos(campo)
+    };
   }
 
   ngOnInit() {

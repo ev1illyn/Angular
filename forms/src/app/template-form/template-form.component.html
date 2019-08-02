@@ -1,40 +1,131 @@
-<div class="container">
 
-    <h3>Template Driven Form</h3>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          
+          <h3>Template Driven Form</h3>
 
-    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
-  
-      <div class="form-group"
-      [class.has-error]="!nome.valid && nome.touched">
-        <label for="nome">Nome:</label>
-        <input placeholder="Evillyn Oliveira"
-         type="text" class="form-control" name="nome"
-          [(ngModel)]="usuario.nome" required #nome="ngModel">
-      </div>
+          <!--informa ao angular que é um form-->
+          <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+        
+            <div class="form-group" [ngClass]="aplicaCssErro(nome)">
+
+              <label class="control-label" for="nome">Nome:</label>
+            
+              <!--informa com o ngModel e name o valor do campo-->
+              <input placeholder="Evillyn Oliveira"
+              type="text" class="form-control" name="nome"
+                [ngModel]="usuario.nome" required #nome="ngModel">
+
+            <app-campo-control-erro [mostraErro]="verificaCampos(nome)" mensagemErro="
+            Nome é obrigatório!"></app-campo-control-erro>
+
+            </div>
+            
+            <div class="form-group" [ngClass]="aplicaCssErro(email)">
+
+              <label class="control-label" for="email">Email:</label>
+
+              <input placeholder="evillyndsoliveiras@gmail.com"
+              type="email" class="form-control" name="email"
+              [ngModel]="usuario.email" required #email="ngModel">
+            
+            <app-campo-control-erro [mostraErro]="verificaCampos(email)" mensagemErro="
+            Email é obrigatório!"></app-campo-control-erro>
+
+            </div>
+            <div class="form-row">
+                <div class="form-group" [ngClass]="aplicaCssErro(cep)">
+
+                    <label class="control-label" for="cep">CEP:</label>
       
-      <div *ngIf="!nome.valid && nome.touched"
-      class="alert alert-danger" role="alert">
-        Nome é obrigatório!
-      </div>
+                    <input type="text" class="form-control" name="cep"
+                    [ngModel]="usuario.cep" required #cep="ngModel">
 
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input placeholder="evillyndsoliveiras@gmail.com"
-         type="email" class="form-control" name="email"
-          [(ngModel)]="usuario.email" required #email="ngModel">
-      </div>
-      
-      <div *ngIf="!email.valid && email.touched"
-      class="alert alert-danger" role="alert">
-        Email é obrigatório!
-      </div>
-  
-      <button type="submit" class="btn btn-success"
-      [disabled]="!f.valid">Submit</button>
-    
-    </form>
+                  <app-campo-control-erro [mostraErro]="verificaCampos(cep)" mensagemErro="
+                  Cep é obrigatório!"></app-campo-control-erro>
 
-    <app-form-debug [form]="f"></app-form-debug>
-  
-  </div>
-  
+                  </div>
+
+
+
+                  <div class="form-group" [ngClass]="aplicaCssErro(numero)">
+
+                      <label class="control-label" for="numero">numero:</label>
+        
+                      <input type="text" class="form-control" name="numero"
+                      [ngModel]="usuario.numero" required #numero="ngModel">
+
+                    <app-campo-control-erro [mostraErro]="verificaCampos(numero)" mensagemErro="
+            Numero é obrigatório!"></app-campo-control-erro>
+
+                    </div>
+
+              </div>
+
+              <div class="form-row">
+
+
+              <div class="form-group" [ngClass]="aplicaCssErro(rua)">
+
+                      <label class="control-label" for="rua">rua:</label>
+        
+                      <input type="text" class="form-control" name="rua"
+                      [ngModel]="usuario.rua" required #rua="ngModel">
+                    
+                    <app-campo-control-erro [mostraErro]="verificaCampos(rua)" mensagemErro="
+                    rua é obrigatório!"></app-campo-control-erro>
+                    </div>
+
+                  <div class="form-group" [ngClass]="aplicaCssErro(bairro)">
+
+                      <label class="control-label" for="bairro">bairro:</label>
+        
+                      <input type="text" class="form-control" name="bairro"
+                      [ngModel]="usuario.bairro" required #bairro="ngModel">
+
+                    <app-campo-control-erro [mostraErro]="verificaCampos(bairro)" mensagemErro="
+                    bairro é obrigatório!"></app-campo-control-erro>
+
+                    </div>
+                    
+              </div>
+              <div class="form-row">
+                
+                <div class="form-group" [ngClass]="aplicaCssErro(cidade)">
+
+                        <label class="control-label" for="cidade">cidade:</label>
+          
+                        <input type="text" class="form-control" name="cidade"
+                        [ngModel]="usuario.cidade" required #cidade="ngModel">
+
+                      <app-campo-control-erro [mostraErro]="verificaCampos(cidade)" mensagemErro="
+                      cidade é obrigatório!"></app-campo-control-erro>
+
+                      </div>
+                      
+                      <div class="form-group" [ngClass]="aplicaCssErro(estado)">
+
+                          <label class="control-label" for="estado">estado:</label>
+            
+                          <input type="text" class="form-control" name="estado"
+                          [ngModel]="usuario.estado" required #estado="ngModel">
+                        
+                        <app-campo-control-erro [mostraErro]="verificaCampos(estado)" mensagemErro="
+                        estado é obrigatório!"></app-campo-control-erro>
+</div>
+                        
+                </div>
+        
+            <button type="submit" class="btn btn-success" [disabled]="!f.valid"> Submit</button>
+          
+          </form>
+
+        </div>
+
+        <div class="col">
+          <app-form-debug [form]="f"></app-form-debug>
+        </div>
+        
+      </div>
+    </div>
