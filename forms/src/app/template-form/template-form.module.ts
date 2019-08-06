@@ -5,11 +5,14 @@ import { CommonModule } from '@angular/common';
 import { TemplateFormComponent } from './template-form.component';
 import { CampoControlErroComponent } from '../campo-control-erro/campo-control-erro.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
     ],
   declarations: [
     TemplateFormComponent,
